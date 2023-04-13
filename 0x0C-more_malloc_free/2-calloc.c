@@ -1,6 +1,5 @@
 #include "main.h"
 
-:
 /**
  * *_memset - description
  * @s: pointer
