@@ -2,23 +2,23 @@
 
 /**
  * *array_range - function that creates an array of integers
- * @min: int
- * @max: int
- * Return: array
+ * @min: starting int
+ * @max: max int
+ * Return: array of integers
  */
 
 int *array_range(int min, int max)
 {
-	int l, n;
-	int *P;
+	int len, i;
+	int *ptr;
 
 	if (min > max)
 		return (NULL);
-	l = max - min + 1;
-	p = malloc(sizeof(int) * l);
-	if (!p)
+	len = max - min + 1;
+	ptr = malloc(sizeof(int) * len);
+	if (!ptr)
 		return (NULL);
-	for (n = 0; n < l; n++)
-		p[n] = min++;
-	return (p);
+	for (i = 0; i < len; i++)
+		ptr[i] = min++;
+	return (ptr);
 }
