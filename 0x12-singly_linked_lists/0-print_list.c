@@ -1,20 +1,20 @@
 #include "lists.h"
 
 /**
- * _slen - description
- * @str: string
+ * _strlen - description
+ * @s: string
  * Return: int
  */
 
-int _slen(char *str)
+int _srtlen(char *s)
 {
-	int i = 0;
+	int a = 0;
 
-	if (!str)
+	if (!s)
 		return (0);
-	while (*str++)
-		i++;
-	return (i);
+	while (*s++)
+		a++;
+	return (a);
 }
 
 /**
@@ -25,13 +25,13 @@ int _slen(char *str)
 
 size_t print_list(const list_t *h)
 {
-	size_t i = 0;
+	size_t a = 0;
 
 	while (h)
 	{
-		printf("[%d] %s\n", _slen(h->s), h->s ? h->s : "(nil)");
+		printf("[%d] %s\n", _strlen(h->str), h->str ? h->str : "(nil)");
 		h = h->next;
-		i++;
+		a++;
 	}
-	return (i);
+	return (a);
 }
