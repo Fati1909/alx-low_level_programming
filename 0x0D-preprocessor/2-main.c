@@ -1,7 +1,7 @@
 #include <stdio.h>
 
 /**
- * main - description
+ * main - print the name of the file
  * Return: nothing
  */
 
