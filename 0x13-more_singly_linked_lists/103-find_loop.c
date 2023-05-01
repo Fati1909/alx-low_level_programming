@@ -2,12 +2,12 @@
 #include <stdlib.h>
 
 /**
- * find_listint_loop_ - description
+ * find_listint_loop - description
  * @head: first node
  * Return: address of node
  */
 
-listint_t *find_listint_loop_(listint_t *head)
+listint_t *find_listint_loop(listint_t *head)
 {
 	listint_t *ptr, *end;
 	
