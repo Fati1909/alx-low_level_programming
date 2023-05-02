@@ -2,7 +2,7 @@
 
 /**
  * print_listint - function that prints all the elements of a list
- * @h: head
+ * @h: first node
  * Return: num of nodes
  */
 
