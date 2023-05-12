@@ -15,31 +15,30 @@
 
 int main(int ac, char **av)
 {
-	int fl_from = 0, fl_to = 0;
+	int from_fd = 0, to_fd = 0;
 	ssize_t a;
 	char buf[READ_BUF_SIZE];
 
 	if (ac != 3)
 		dprintf(STDERR_FILENO, USAGE), exit(97);
-	fl_from = open(av[1], o_RDONLY);
-	if (fl_from == -1)
+	from_fd = open(av[1], O_RDONLY);
+	if (from_fd == -1)
 		dprintf(STDERR_FILENO, ERR_NOREAD, av[1], exit(98);
-	fl_to = open(av[2], O_WRONLY | O_CREAT | O_TRUNC, PERMISSIONS);
-	if (fl_to == -1)
-	dprintf(STDERR_FILENO, ERR_NOWRITE, av[2], exit(99);
+				to_fd = open(av[2], O_WRONLY | O_CREAT | O_TRUNC, PERMISSIONS);
+				if (to_fd == -1)
+				dprintf(STDERR_FILENO, ERR_NOWRITE, av[2], exit(99);
 
-		while ((a = read(fl_from, buf, READ_BUF_SIZE)) > 0)
-		if (write(fl_to, buf, a) != a)
-		dprintf(STDERR_FILENO, ERR_NOWRITE, av[2], exit(99);
-			if (a == -1)
-			dprintf(STDERR_FILENO, ERR_NOREAD, av[1], exit(98);
+					while ((a = read(from_fd, buf, READ_BUF_SIZE)) > 0)
+					if (write(to_fd, buf, a) != a)
+					dprintf(STDERR_FILENO, ERR_NOWRITE, av[2], exit(99);
+						if (a == -1)
+						dprintf(STDERR_FILENO, ERR_NOREAD, av[1], exit(98);
+							from_fd = close(from_fr);
+							to_fd = close(to_fd);
+							if (from_fd)
+							dprintf(STDERR_FILENO, ERR_NOCLOSE, from_fd), exit(100);
+							if (to_fd)
+							dprintf(STDERR_FILENO, ERR_NOCLOSE, from_fd), exit(100);
 
-				fl_from = close(fl_from);
-				fl_to = close(fl_to);
-				if (fl_from)
-				dprintf(STDERR_FILENO, ERR_NOCLOSE, fl_from), exit(100);
-				if (fl_to)
-				dprintf(STDERR_FILENO, ERR_NOCLOSE, fl_from), exit(100);
-
-				return (EXIT_SUCCESS);
-				}
+							return (EXIT_SUCCESS);
+							}
