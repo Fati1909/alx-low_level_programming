@@ -7,9 +7,9 @@
 #define PERMISSIONS (S_IRUSR | S_IWUSR | S_IRGRP | S_IWGRP | S_IROTH)
 
 /**
- * main - description
- * @ac: argument
- * @av: arguement
+ * main - program
+ * @ac: argument count
+ * @av: arguement vector
  * Return: 1 on success 0 on failure
  */
 
