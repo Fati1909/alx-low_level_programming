@@ -2,20 +2,20 @@
 #include "lists.h"
 
 /**
- * free_dlistint - function that free a list
+ * free_dlistint - function that frees a list
  * @head: first node
  * Return: Nothing
  */
 
 void free_dlistint(dlistint_t *head)
 {
-	dlistint_t *a = head;
-	dlistint_t *n;
+	dlistint_t *current = head;
+	dlistint_t *next;
 
-	while (a != NULL)
+	while (current != NULL)
 	{
-		n = a->n;
-		free(a);
-		a = n;
+		next = current->next;
+		free(current);
+		current = next;
 	}
 }
